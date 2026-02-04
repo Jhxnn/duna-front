@@ -1,0 +1,301 @@
+/* Duna Theme - desert browns and sands */
+:root {
+  --sand-50: #f6efe6;
+  --sand-100: #efe3d1;
+  --sand-200: #e3d0b2;
+  --sand-300: #d3b78b;
+  --sand-400: #c4a369;
+  --sand-500: #b38b4c; /* primary */
+  --sand-600: #9a7440;
+  --sand-700: #815e35;
+  --sand-800: #6a4b2a;
+  --sand-900: #4a331b;
+
+  --dune-text: #3b2a1a;
+  --dune-bg: #f3eadf;
+  --dune-card: #ffffffcc;
+  --dune-border: #e5d9c8;
+  --dune-accent: #a6783b;
+  --dune-accent-strong: #8e5f27;
+  --focus-ring: 0 0 0 3px color-mix(in srgb, var(--sand-500) 30%, transparent);
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--dune-text);
+  background:
+    radial-gradient(1200px 600px at 80% -20%, #ffe4b8 0%, transparent 60%),
+    radial-gradient(900px 500px at -10% 10%, #f0d5a5 0%, transparent 55%),
+    linear-gradient(180deg, var(--dune-bg) 0%, #efe3d1 50%, #e6d6bf 100%);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent overflow of form controls */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Base links */
+a {
+  color: var(--sand-700);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--sand-800);
+}
+
+/* Navbar */
+.duna-nav {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 16px;
+  background: linear-gradient(180deg, var(--sand-100), var(--sand-50));
+  border-bottom: 1px solid var(--dune-border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.duna-nav a {
+  color: var(--sand-800);
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.duna-nav a:hover {
+  background: color-mix(in srgb, var(--sand-400) 18%, transparent);
+}
+.duna-nav a.active {
+  background: color-mix(in srgb, var(--sand-400) 28%, transparent);
+  color: #2d2014;
+  box-shadow: inset 0 -2px 0 0 var(--sand-600);
+}
+.duna-nav .spacer {
+  margin-left: auto;
+}
+
+/* Sidebar layout */
+.layout {
+  display: flex;
+  min-height: 100dvh;
+}
+.duna-sidebar {
+  width: 240px;
+  flex: 0 0 240px;
+  background: linear-gradient(180deg, var(--sand-100), var(--sand-50));
+  border-right: 1px solid var(--dune-border);
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+}
+.duna-sidebar .brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  font-weight: 700;
+  color: var(--sand-800);
+}
+.duna-sidebar .group-title {
+  margin: 10px 8px 6px;
+  font-size: .78rem;
+  color: var(--sand-700);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.duna-sidebar a {
+  color: var(--sand-800);
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: background .2s ease, color .2s ease;
+}
+.duna-sidebar a:hover {
+  background: color-mix(in srgb, var(--sand-400) 18%, transparent);
+}
+.duna-sidebar a.active {
+  background: color-mix(in srgb, var(--sand-400) 28%, transparent);
+  color: #2d2014;
+  box-shadow: inset 0 0 0 1px var(--sand-500);
+}
+.duna-sidebar .spacer {
+  flex: 1;
+}
+.sidebar-footer {
+  display: grid;
+  gap: 6px;
+  padding: 8px 6px;
+  border-top: 1px solid var(--dune-border);
+}
+.user-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid var(--dune-border);
+  color: var(--sand-800);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: .9rem;
+}
+.logout-btn {
+  background: linear-gradient(180deg, #c8613b, #a84d2e);
+  box-shadow:
+    0 2px 0 0 #7a3820,
+    0 6px 14px rgba(168, 77, 46, .24);
+}
+
+.content-area {
+  flex: 1 1 auto;
+  padding: 16px;
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: var(--sand-800);
+  letter-spacing: 0.2px;
+}
+h2 {
+  margin: 8px 0 16px;
+}
+
+/* Cards (implicit) */
+.card {
+  background: var(--dune-card);
+  border: 1px solid var(--dune-border);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow:
+    0 10px 18px rgba(0,0,0,0.04),
+    0 2px 6px rgba(0,0,0,0.03);
+}
+
+/* Forms */
+form {
+  background: var(--dune-card);
+  border: 1px solid var(--dune-border);
+  border-radius: 12px;
+  padding: 16px;
+}
+label {
+  font-size: 0.9rem;
+  color: var(--sand-800);
+}
+input, textarea, select {
+  padding: 10px 12px;
+  border: 1px solid var(--dune-border);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--dune-text);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--sand-500);
+  box-shadow: var(--focus-ring);
+}
+
+/* Buttons */
+button {
+  appearance: none;
+  border: 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, var(--sand-500), var(--sand-600));
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.05s ease, filter 0.2s ease, box-shadow 0.2s ease;
+  box-shadow:
+    0 2px 0 0 var(--sand-700),
+    0 6px 14px rgba(154, 116, 64, 0.25);
+}
+button:hover {
+  filter: brightness(1.02);
+}
+button:active {
+  transform: translateY(1px);
+  box-shadow:
+    0 1px 0 0 var(--sand-700),
+    0 3px 8px rgba(154, 116, 64, 0.25);
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Helpers */
+.muted {
+  color: var(--sand-700);
+  opacity: 0.9;
+}
+
+/* Responsive utilities and page layouts */
+.page {
+  padding: 16px;
+}
+.page-center {
+  padding: 24px;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+}
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: linear-gradient(180deg, #fff, #fff7ef);
+  border: 1px solid var(--dune-border);
+  border-radius: 16px;
+  padding: 20px;
+}
+.auth-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.auth-title {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--sand-800);
+}
+.auth-subtitle {
+  margin: 0 0 12px 0;
+  font-size: 0.95rem;
+  color: var(--sand-700);
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+.w-100 {
+  width: 100%;
+}
+.text-right {
+  text-align: right;
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding: 24px;
+  }
+  .auth-card {
+    padding: 24px;
+  }
+}
+
+/* You can add global styles to this file, and also import other style files */
